@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta Coffee="UTF-8">
+	<title>Coffee</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<style>
+		header {
+		height: 180px;
+		width: 100%;
+		background-image: url(brown-coffee.jpg);
+		background-repeat:initial;
+        background-size:cover;
+	}
+	body {
+		margin: 0;
+		/* font-family: Gill Sans Extrabold, sans-serif */
+	}
+	nav {
+		height: 10px;
+		width: 100%;
+		background-color: rgb(210, 153, 30);
+	}
+	main {
+		height: 750px;
+		width: 100%;
+		background-color: rgb(255, 226, 163);
+	}
+	footer {
+		height: 120px;
+		width: 100%;
+		background-image: url(images.jpeg);
+		background-repeat:initial;
+        background-size:unset;
+	}
+	
+	
+	.category {
+		font-size: 22px;
+		position: absolute;
+		left: 5%;
+		top: 230px;
+	}
+	
+	.size {
+		font-size: 22px;
+		position: absolute;
+		left: 5%;
+		top: 500px;
+	}
+	.ingred {
+		font-size: 22px;
+		position: absolute;
+		top: 200px;
+	}
+	.chooseCategory {
+		font-size: 25px;
+		line-height: 50px;
+	}
+	.chooseSize {
+		font-size: 25px;
+	}
+	.chooseIngredients {
+		font-size: 25px;
+		width: 400px;
+	}
+	.dri {
+		font-size: 30px;
+		position: absolute;
+		right: 250px;
+		top: 250px;
+	}
+	.customer {
+		font-size: 18px;
+		position: absolute;
+		right: 5%;
+		top: 350px;
+		height: auto;
+	}
+	.contacts {
+	width: 300px;
+    height: auto;
+    margin-right: 40px;
+    margin-top: 20px;
+    float: right;
+    text-align: center;
+    font-size: 20px;
+	font-weight: 700
+	}
+	.lineHeight {
+		line-height: 10px;
+	}
+	.picture {
+		position: relative;
+		top: 100px;
+		left: 35%;
+		width:500px;
+		height: 500px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		
+	}
+	form {
+		width: fit-content;
+	}
+	</style>
+
+
+	<script type="text/javascript">
+		// window.addEventListener("load", init, false)
+		window.onload = function () {
+			var price = 0;
+			var cost = document.getElementById("price");
+			var dri = document.getElementById("dri")
+
+			var espresso = document.getElementById("espresso")
+			var americano = document.getElementById("americano")
+			var latte = document.getElementById("latte")
+			var capuccino = document.getElementById("capuccino")
+
+			var pic = document.getElementById("picture")
+
+			var espressoDiv = document.getElementById("espressoDiv");
+			var americanoDiv = document.getElementById("americanoDiv");
+			var latteDiv = document.getElementById("latteDiv");
+			var capuccinoDiv = document.getElementById("capuccinoDiv");
+
+			var button = document.getElementById("button")
+
+			button.onclick = function(e) {
+				if (price == 0) {
+					alert("Вы должны выбрать напиток и его размер")
+					e.preventDefault();
+				}
+				else {
+
+				}
+			}
+
+			espressoDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('espresso.jpg')";
+			}
+			espressoDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			americanoDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('americano.jpg')";
+			}
+			americanoDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			latteDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('latte.jpg')";
+			}
+			latteDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			capuccinoDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('capuccino.jpg')";
+			}
+			capuccinoDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			smallDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('small.jpg')";
+			}
+			smallDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			mediumDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('medium.jpg')";
+			}
+			mediumDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			largeDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('large.jpg')";
+			}
+			largeDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+
+
+			toppingDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('topping.jpg')";
+			}
+			toppingDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			whiskeyDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('whiskey.jpg')";
+			}
+			whiskeyDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			cinnamonDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('cinnamon.jpg')";
+			}
+			cinnamonDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+			marshmallowDiv.onmouseover = function () {
+				pic.style.backgroundImage = "url('marshmallow.jpg')";
+			}
+			marshmallowDiv.onmouseout = function () {
+                pic.style.backgroundImage = "";
+            }
+
+			for (var i = 0; i < document.size.elements.length; i++) {
+				var formElem = document.size.elements[i];
+				if (formElem.name === "size" || formElem.name === "ingredient") {
+					formElem.addEventListener("change", function (e) {
+						if (e.target.value == "small") {
+							if (espresso.checked == true) {
+								price = 12
+							}
+							else if (americano.checked == true) {
+								price = 18
+							}
+							else if (latte.checked == true) {
+								price = 22
+							}
+							else if (capuccino.checked == true) {
+								price = 25
+							}
+						}
+						else if (e.target.value == "medium") {
+							if (espresso.checked == true) {
+								price = 17
+							}
+							else if (americano.checked == true) {
+								price = 23
+							}
+							else if (latte.checked == true) {
+								price = 27
+							}
+							else if (capuccino.checked == true) {
+								price = 30
+							}
+						}
+						else if (e.target.value == "large") {
+							if (espresso.checked == true) {
+								price = 22
+							}
+							else if (americano.checked == true) {
+								price = 28
+							}
+							else if (latte.checked == true) {
+								price = 32
+							}
+							else if (capuccino.checked == true) {
+								price = 35
+							}
+						}
+						else if (e.target.value === "topping") {
+							if (e.target.checked) {
+								price += 5;
+							}
+							else {
+								price -= 5;
+							}
+						}
+						else if (e.target.value === "whiskey") {
+							if (e.target.checked) {
+								price += 8;
+							}
+							else {
+								price -= 8;
+							}
+						}
+						else if (e.target.value === "cinnamon") {
+							if (e.target.checked) {
+								price += 5;
+							}
+							else {
+								price -= 5;
+							}
+						}
+						else if (e.target.value === "marshmallow") {
+							if (e.target.checked) {
+								price += 10;
+							}
+							else {
+								price -= 10;
+							}
+						}
+						dri.innerHTML = 'Сумма: ' + price;
+
+					})
+				}
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+
+	</header>
+	<nav>
+
+	</nav>
+	<main>
+		<div class="category">
+			<p class="chooseCategory">Выберите тип напитка</p>
+			<form name="drink" id="drink">
+				<div id="espressoDiv">
+					<input type="radio" name="category" id="espresso" value="espresso">
+					<label id="espresso" for="espresso">espresso</label>
+				</div>
+
+				<div id="americanoDiv">
+					<input type="radio" name="category" id="americano" value="americano">
+					<label id="americano for=" americano">americano</label>
+				</div>
+
+
+				<div id="latteDiv">
+					<input type="radio" name="category" id="latte" value="latte">
+					<label id="latte for=" latte">latte</label>
+				</div>
+
+				<div id="capuccinoDiv">
+					<input type="radio" name="category" id="capuccino" value="capuccino">
+					<label id="capuccino for=" capuccino">capuccino</label>
+				</div>
+			</form>
+			<hr>
+
+		</div>
+
+		<div class="size">
+			<p class="chooseSize">Выберите размер напитка</p>
+			<form name="size">
+
+				<div id="smallDiv">
+					<input type="radio" id="small" name="size" value="small">
+					<label for="small">small</label>
+				</div>
+
+				<div id="mediumDiv">
+					<input type="radio" id="medium" name="size" value="medium">
+					<label for="medium">medium</label>
+				</div>
+
+				<div id="largeDiv">
+					<input type="radio" id="large" name="size" value="large">
+					<label for="large">large</label>
+				</div>
+
+
+				<div class="ingred">
+					<p class="chooseIngredients">Дополнительные ингредиенты</p>
+
+					<div id="toppingDiv" style="width: fit-content;">
+						<input type="checkbox" name="ingredient" id="topping" value="topping">
+						<label for="topping">topping</label>
+					</div>
+
+
+					<div id="whiskeyDiv" style="width: fit-content;">
+						<input type="checkbox" name="ingredient" id="whiskey" value="whiskey">
+						<label for="whiskey">whiskey</label>
+					</div>
+					<div id="cinnamonDiv" style="width: fit-content;">
+						<input type="checkbox" name="ingredient" id="cinnamon" value="cinnamon">
+						<label for="cinnamon">cinnamon</label>
+					</div>
+					<div id="marshmallowDiv" style="width: fit-content;">
+						<input class="lineHeight" type="checkbox" name="ingredient" id="marshmallow" value="marshmallow">
+						<label class="lineHeight" for="marshmallow">marshmallow</label>
+					</div>
+				</div>
+			</form>
+			<hr>
+		</div>
+
+		<div id="picture" class="picture"></div>
+
+		<div class="dri" id="dri"></div>
+		<div class="customer" style="padding: 20px; border: 20px solid rgb(255, 145, 0)">
+			<form method="get" action="accepted.html" enctype="text/plain">
+
+				<div class="form-group">
+					<label for="name">Ваше имя:</label> <br>
+					<input class="form-control" id="name" style="width:250px; height: 35px;" type="text"
+					 name="name" id="name" required>
+				</div>
+
+				<div class="form-group">
+				<label for="phone">Номер телефона:</label><br>
+				<input class="form-control" id="phone" style="width:250px; height: 35px;" type="number"
+				 name="name" id="name" required>
+				</div>
+
+				<div class="form-group">
+				<label for="adress">Адресс доставки:</label><br>
+				<input class="form-control" id="adress" style="width:250px; height: 35px;" type="text"
+				 name="name" id="name" required>
+				</div>
+
+				<input style="width:250px; margin-top:30px; background-color: rgba(255, 157, 29, 0.89)" class="btn btn-success" id="button"
+				 type="submit" value="Заказать">
+			</form>
+		</div>
+
+
+	</main>
+	<footer>
+		<div class="contacts" id="contacts" style="width:310px; height: 100px;">Телефон: (093)-123-45-67
+			Адресс: ул. Драгоманова 12
+		</div>
+	</footer>
+</body>
+
+</html>
